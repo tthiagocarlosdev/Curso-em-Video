@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex007 - Somar</title>
+    <style>
+        body{
+            font: normal 18pt verdana;
+        }
+        input{
+            font: normal 20pt verdana;
+            width: 80pt;
+        }
+        div#answer{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somandos Valores</h1>
+    <input type="number" name="textNumber1" id="textNumber1"> +
+    <input type="number" name="textNumber2" id="textNumber2">
+    <input type="button" value="add" onclick="add()">
+    <div id="answer">Resultado</div>
+    <script>
+        function add(){
+            var textNumber1 = window.document.getElementById('textNumber1')
+            var textNumber2 = window.document.getElementById('textNumber2')
+            var number1 = Number(textNumber1.value)
+            var number2  = Number(textNumber2.value)
+            var add = number1 + number2
+            answer.innerHTML = `A soma entre ${number1} e ${number2} é igual a <strong>${add}</strong>`
+        }
+    </script>
+</body>
+</html>

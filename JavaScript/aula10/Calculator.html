@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font: normal 20pt verdana;
+        }
+        input {
+            width: 80pt;
+            font: normal 20pt verdana;
+        }
+        div {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <h2>Add</h2>
+    <input type="number" name="textNumber1a" id="textNumber1a"> + 
+    <input type="number" name="textNumber2a" id="textNumber2a">
+    <input type="button" value="Add" onclick="add()">
+    <div id="answerAdd">Answer</div>
+
+    <h2>Subtract</h2>
+    <input type="number" name="textNumber1s" id="textNumber1s"> - 
+    <input type="number" name="textNumber2s" id="textNumber2s">
+    <input type="button" value="Add" onclick="subtract()">
+    <div id="answerSubtract">Answer</div>
+
+    <h2>Multiplication</h2>
+    <input type="number" name="textNumber1m" id="textNumber1m"> * 
+    <input type="number" name="textNumber2m" id="textNumber2m">
+    <input type="button" value="Add" onclick="multiplication()">
+    <div id="answerMultiplication">Answer</div>
+
+    <h2>Division</h2>
+    <input type="number" name="textNumber1d" id="textNumber1d"> / 
+    <input type="number" name="textNumber2d" id="textNumber2d">
+    <input type="button" value="Add" onclick="division()">
+    <div id="answerDivision">Answer</div>
+    <script>
+        function add(){
+            var textNumber1a = document.querySelector('input#textNumber1a')
+            var textNumber2a = document.querySelector('input#textNumber2a')
+            var number1a = Number(textNumber1a.value)
+            var number2a = Number(textNumber2a.value)
+            var add = number1a + number2a
+            answerAdd.innerHTML = `The sum between ${number1a} and ${number2a} is equal to <strong>${add.toFixed(2)}</strong>`
+        }
+
+        function subtract(){
+            var textNumber1a = document.querySelector('input#textNumber1s')
+            var textNumber2a = document.querySelector('input#textNumber2s')
+            var number1a = Number(textNumber1a.value)
+            var number2a = Number(textNumber2a.value)
+            var subtract = number1a - number2a
+            answerSubtract.innerHTML = `The subtraction between ${number1a} and ${number2a} is equal to <strong>${subtract.toFixed(2)}</strong>`
+        }
+
+        function multiplication(){
+            var textNumber1a = document.querySelector('input#textNumber1m')
+            var textNumber2a = document.querySelector('input#textNumber2m')
+            var number1a = Number(textNumber1a.value)
+            var number2a = Number(textNumber2a.value)
+            var multiplication = number1a * number2a
+            answerMultiplication.innerHTML = `The multiplication between ${number1a} and ${number2a} is equal to <strong>${multiplication.toFixed(2)}</strong>`
+        }
+
+        function division(){
+            var textNumber1a = document.querySelector('input#textNumber1d')
+            var textNumber2a = document.querySelector('input#textNumber2d')
+            var number1a = Number(textNumber1a.value)
+            var number2a = Number(textNumber2a.value)
+            var division = number1a / number2a
+            answerDivision.innerHTML = `The division between ${number1a} and ${number2a} is equal to <strong>${division.toFixed(2)}</strong>`
+        }
+    </script>
+</body>
+</html>
