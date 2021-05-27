@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nationality</title>
+    <style>
+        body {
+            background-color:burlywood;
+            font: bold 18pt courier;
+        }
+        input {
+            font: bold 18pt courier;
+            width: 100pt;
+            background-color:lightblue
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Nationality</h1>
+    Where're from?
+    <input type="text" name="pais" id="country">
+    <input type="button" value="Load" onclick="clicar()">
+    <div id="resposta"></div>
+    <script>
+        function clicar() {
+            var textCountry = document.getElementById('country')
+            var country = String(textCountry.value.toUpperCase())
+            var answer = document.querySelector('div#resposta')
+            answer.innerHTML = `<p>Your country is <strong>${country}!</strong></p>`
+            if (country == 'BRASIL'){
+                answer.innerHTML += `<p>You're brazilian!</p>`
+            } else{
+                answer.innerHTML += `<p>You're foreign!</p>`
+            }
+        }
+    </script>
+</body>
+</html>
+<!--var país ='EUA'
+console.log(`Vivendo em ${país}`)
+if (país == 'Brasil') { // CONDICIONAL COMPOSTA!
+    console.log('Você é Brasileiro!')
+}else{
+    console.log('Você é Estrangeiro!')
+}-->

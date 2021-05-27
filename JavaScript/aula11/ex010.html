@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        body {
+            font: normal 20pt Sans;
+            background-color:burlywood;
+        }
+        input {
+            font: normal 20pt Sans;
+            width: 100pt;
+            background-color:darkgreen;
+        }
+        div{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>DETRAN</h1>
+    Velocidade do carro: <input type="number" name="velocidade" id="velocidade"> km/h
+    <input type="button" value="Carregar" onclick="velocity()">
+    <div id="answer">Resultado da consulta</div> 
+    <script>
+        function velocity() {
+            var textVelocity = document.querySelector('input#velocidade');
+            var velocity = Number(textVelocity.value);
+            var answer = document.querySelector(`div#answer`)
+            answer.innerHTML = `<p>A velocidade do seu carro é <strong>${velocity.toFixed(1)}</strong> km/h<p>`
+                if (velocity > 60) {
+                    answer.innerHTML +=`<p>Você ultrapassou a velocidade permitida. <strong>MULTADO!<strong></p>`    
+            }
+            answer.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`
+        }
+        
+    </script>
+</body>
+</html>
