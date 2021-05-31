@@ -15,22 +15,19 @@
         <div>
             <p>
                 Ano de Nascimento: 
-                <input type="number" name="age" id="age">
+                <input type="number" name="anoNascimento" id="anoNascimento" min="0" max="120">
             </p>            
             <p>
                 Sexo:
-                <input type="checkbox" name="man" id="man">
-                Masculino
-                <input type="checkbox" name="women" id="women">
-                Feminino
-                <input type="button" value="Verificar">
-            </p> 
+                <input type="radio" name="sexo" id="masculino" checked>
+                <label for="masculino">Masculino</label>
+                <input type="radio" name="sexo" id="feminino">
+                <label for="feminino">Feminino</label>
+            </p>
+            <p><input type="button" value="Verificar" onclick="verificar()"></p> 
         </div>
-        <div>
-            <p id="final">
-                Preencha os dados acima para ver o resultado
-                <img id="image" src="" alt="">                
-            </p>            
+        <div id="mensagemFinal">
+            Preencha os dados acima para ver o resultado
         </div>
     </section>
     <footer>
