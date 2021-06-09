@@ -1,9 +1,32 @@
-function add(){
+var valor = document.getElementById('adicionarNumero')
+valor = valor.value
+function adicionar(){
+    if(valor == ''){
+        alert('Valor inválido ou já encontrado na lista')
+    } else if(valor > 100){
+        alert('Valor inválido ou já encontrado na lista')
+    } else if(valor == 0){
+        alert('Valor inválido ou já encontrado na lista')
+    } else {
+        alert('OK')
+        /*let mostrarSelect = document.getElementById('mostrarSelect')
+        let meuArray = []
+        meuArray = valor
+        for (contador in meuArray){
+            let seletor = document.createElement('option')
+            seletor.text += `Valor ${meuArray[contador]} adicionado.`
+            mostrarSelect.appendChild(seletor)
+        }*/
+    }
+}
+
+
+
+/*function add(){
     var number = []
-    var valuee = document.getElementById('addNumber')
     
     valuee = valuee.value
-    var firstAnswer = document.getElementById('firstAnswer')
+    var firstAnswer = document.getElementById('mostrarSelect')
     var numberB = number.indexOf(valuee)
     var thereAreNumber =  numberB < 0
     var thereAreZero = valuee.length == ''
@@ -26,11 +49,14 @@ function add(){
         
     }
     //mostrando os valores
+    
+}
+function finish(){
     var total = number.length
+    number = number.sort()
     var show = document.getElementById('show')
     for (contador in number){
         show.innerHTML += `${number[contador]} - `
     }
     show.innerHTML += `Ao todo temos ${total} cadastrados`
-}
-
+}*/
