@@ -25,24 +25,44 @@ select.innerHTML = ``
 
 function adicionar(){
     if(ehNumero(numero.value) && !naLista(numero.value, lista)){
+            //adicionar o valor a lista
+            lista.push(Number(numero.value))
             // mostrar no seletor
             let item = document.createElement('option')
             item.text += `Valor ${Number(numero.value)} adicionado`
             select.appendChild(item)
-
-            //adicionar o valor a lista
-            lista += numero.value
             resultadoFinal.innerHTML = ``
     } else {
         alert('Número inválido ou já encontrado na lista!')
     }
+    numero.value = ''
+    numero.focus()
 }
 
 
+
 function finalizar(){
-    let tamanho = lista.length
-    let listaEmOrdemCrescente = lista.sort()
-    let menorValor = lista[0]
-    resultadoFinal.innerHTML = `Ao todo, temos ${tamanho} números cadastrados.`
-    resultadoFinal.appendChild = (`O menor valor informado foi ${menorValor}`)
+    if (lista.length == 0){
+        window.alert('Adicione valores antes de finalizar')
+    } else {
+        let totalValores = lista.length
+        let listaEmOrdemCrescente = lista.sort()
+        let listaMaior = totalValores - 1
+        let maiorValor = lista[listaMaior]
+        let menorValor = lista[0]
+        let somaValores = 0
+        let mediaValores = 0
+        for (let contador in lista){
+             somaValores += lista[contador]
+        }
+        mediaValores = somaValores / totalValores
+        
+        resultadoFinal.innerHTML += `<p>Ao todo, temos ${totalValores} números cadastrados.</p>`
+        resultadoFinal.innerHTML += `<p>O menor valor informado foi ${menorValor}</p>`
+        resultadoFinal.innerHTML += `<p>O maior valor informado foi ${maiorValor}</p>`
+        resultadoFinal.innerHTML += `<p>Somando todos os valores, temos ${somaValores}</p>`
+        resultadoFinal.innerHTML += `<p>A média entre os valores digitados é ${mediaValores.toFixed(1)}</p>`
+    }
+    
+    
 }
